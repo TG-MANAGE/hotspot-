@@ -1,4 +1,4 @@
-#THIS_IS_PROPERTY_OF_ESBOT
+#THIS_IS_MODIFIED_REPO_FOR_PERSNOL USE...PLEASE DO NOT SHARE
 
 import re
 import sys
@@ -109,13 +109,9 @@ CLEANMODE_DELETE_MINS = int(
 
 # Telegram audio  and video file size limit
 
-TG_AUDIO_FILESIZE_LIMIT = int(
-    getenv("TG_AUDIO_FILESIZE_LIMIT", "204857600")
-)  # Remember to give value in bytes
+TG_AUDIO_FILESIZE_LIMIT = int("204857600")  # Remember to give value in bytes
 
-TG_VIDEO_FILESIZE_LIMIT = int(
-    getenv("TG_VIDEO_FILESIZE_LIMIT", "573741824")
-)  # Remember to give value in bytes
+TG_VIDEO_FILESIZE_LIMIT = int("573741824")  # Remember to give value in bytes
 
 # Chceckout https://www.gbmb.org/mb-to-bytes  for converting mb to bytes
 
