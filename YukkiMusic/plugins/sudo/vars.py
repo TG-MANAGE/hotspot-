@@ -1,11 +1,10 @@
-#THIS_IS_PROPERTY_OF_ESBOT
+#THIS_IS_MODIFIED_REPO_FOR_PERSNOL USE...PLEASE DO NOT SHARE
 
 import asyncio
 
 from pyrogram import filters
 
 import config
-from config import OWNER_ID
 from strings import get_command
 from YukkiMusic import app
 from YukkiMusic.misc import SUDOERS

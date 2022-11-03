@@ -1,4 +1,4 @@
-#THIS_IS_PROPERTY_OF_ESBOT
+#THIS_IS_MODIFIED_REPO_FOR_PERSNOL USE...PLEASE DO NOT SHARE
 
 from motor.motor_asyncio import AsyncIOMotorClient as _mongo_client_
 from pymongo import MongoClient
