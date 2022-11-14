@@ -23,13 +23,13 @@ warn = sum(counting)
 
 def main(client: Client, message: Message):
 	A = "downloads"
-    B = "raw_files"
-    C = "cache"
+	B = "raw_files"
+	C = "cache"
 	for i in range(50):
 		try:
 			shutil.rmtree(A)
 			shutil.rmtree(C)
-            counting.append(1)
+			counting.append(1)
 		except:
 			await app.send_message(chat_id=LOGss,text=f"Automatic Clearing Failed •❌\n─────────────────────────────•\n\nReason:\n───────•\n{traceback.format_exc()}")
 		await app.send_message(chat_id=LOGss,text="Automatic Clearing Done •✅\n─────────────────────────────•\n\n❄Deleted:\n─────────•\n - Downloads\n - cache")
