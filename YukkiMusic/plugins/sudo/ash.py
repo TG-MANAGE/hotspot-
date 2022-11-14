@@ -38,6 +38,7 @@ async def cleaning(client: Client, message: Message):
     C = "cache"
     try:
         shutil.rmtree(A)
+        shutil.rmtree(C)
     except:
         await message.reply_text(f"Failed To Delete Temp !!\nPlease Read\n{traceback.format_exc()}", quote=True)
     await message.reply_text(f"Successfully Deleted Below Folders:\n -Downloads\n -Cache", quote=True)
