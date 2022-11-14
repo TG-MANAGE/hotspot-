@@ -7,6 +7,7 @@ import os
 import shutil
 import socket
 
+import traceback
 
 from YukkiMusic.utils.database.memorydatabase import (active, activevideo)
 from YukkiMusic.misc import SUDOERS
@@ -40,7 +41,7 @@ async def cleaning(client: Client, message: Message):
         shutil.rmtree(B)
         shutil.rmtree(C)
     except:
-        await message.reply_text(f"Failed To Delete Temp !!\nPlease Clean From VPS", quote=True)
+        await message.reply_text(f"Failed To Delete Temp !!\nPlease Read\n{traceback.format_exc()}", quote=True)
     await message.reply_text(f"Successfully Deleted Below Folders:\n -Downloads\n -raw_files\n -Cache", quote=True)
 
 
