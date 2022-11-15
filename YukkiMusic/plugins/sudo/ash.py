@@ -1,14 +1,14 @@
-from pyrogram import Client, filters
-from pyrogram.types import Message
-from YukkiMusic import app
 import asyncio
 import math
 import os
 import shutil
 import socket
-
 import traceback
-
+import psutil
+from config import LOG_GROUP_ID
+from pyrogram import Client, filters
+from pyrogram.types import Message
+from YukkiMusic import app
 from YukkiMusic.utils.database.memorydatabase import (active, activevideo)
 from YukkiMusic.misc import SUDOERS
 from YukkiMusic.utils.cmdforac import avoice
@@ -17,7 +17,7 @@ from YukkiMusic.utils.cmdforac import avoice
 #-------------------------------------------------------------------#
 
 
-
+LOGINGG = config.LOG_GROUP_ID
 
 
 #--------------------------Code------------------#
@@ -40,4 +40,11 @@ async def cleaning(client: Client, message: Message):
         await message.reply_text(f"Failed To Delete Temp !!\nPlease Read\n{traceback.format_exc()}", quote=True)
     await message.reply_text(f"Successfully Deleted Below Folders:\n -Downloads", quote=True)
 
+    
+CPU_LOAD = psutil.cpu_percent(interval=0.5)
+RAM_LOAD = psutil.virtual_memory().percent
+DISK_SPACE = psutil.disk_usage("/").percent
+
+if CPU_LOAD > 50:
+    app.send_message(chat_id=LOGINGG,text="Warning:\nCPU LOAD IS ON IT'S PEAK !!")
 
