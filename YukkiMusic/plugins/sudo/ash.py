@@ -5,7 +5,7 @@ import shutil
 import socket
 import traceback
 import psutil
-from config import LOG_GROUP_ID
+import config
 from pyrogram import Client, filters
 from pyrogram.types import Message
 from YukkiMusic import app
@@ -45,6 +45,18 @@ CPU_LOAD = psutil.cpu_percent(interval=0.5)
 RAM_LOAD = psutil.virtual_memory().percent
 DISK_SPACE = psutil.disk_usage("/").percent
 
-if CPU_LOAD > 50:
-    app.send_message(chat_id=LOGINGG,text="Warning:\nCPU LOAD IS ON IT'S PEAK !!")
+
+#-----------------------------AUTO_CLEANER-&-SAFETY-------------------------------#
+
+
+async def aclearr(client: Client, message: Message):
+    A = 'rm -rf downloads'
+    try:
+        os.system(A)
+    except:
+        pass
+    await app.send_message(LOG_GROUP_ID, "Disk Storage Was On It's Peak!\nNow Deleting The DOWNLOADS.!!")
+
+if DISK_SPACE > int(42):
+    aclearr()
 
