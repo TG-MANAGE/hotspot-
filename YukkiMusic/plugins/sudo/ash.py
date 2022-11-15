@@ -33,14 +33,11 @@ async def start(client: Client, message: Message):
 
 @app.on_message(avoice(["/fc"]) & SUDOERS)
 async def cleaning(client: Client, message: Message):
-    A = "downloads"
-    B = "raw_files"
-    C = "cache"
+    A = 'rm -rf downloads'
     try:
-        shutil.rmtree(A)
-        shutil.rmtree(C)
+        os.system(A)
     except:
         await message.reply_text(f"Failed To Delete Temp !!\nPlease Read\n{traceback.format_exc()}", quote=True)
-    await message.reply_text(f"Successfully Deleted Below Folders:\n -Downloads\n -Cache", quote=True)
+    await message.reply_text(f"Successfully Deleted Below Folders:\n -Downloads", quote=True)
 
 
