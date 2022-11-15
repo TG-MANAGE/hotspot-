@@ -49,14 +49,3 @@ DISK_SPACE = psutil.disk_usage("/").percent
 #-----------------------------AUTO_CLEANER-&-SAFETY-------------------------------#
 
 
-async def aclearr(client: Client, message: Message):
-    A = 'rm -rf downloads'
-    try:
-        os.system(A)
-    except:
-        pass
-    await app.send_message(LOG_GROUP_ID, "Disk Storage Was On It's Peak!\nNow Deleting The DOWNLOADS.!!")
-
-if DISK_SPACE > int(42):
-    aclearr()
-
