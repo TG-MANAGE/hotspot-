@@ -57,7 +57,7 @@ async def playmode_(client, message: Message, _):
         except:
             return await message.reply_text(_["cplay_4"])
         for users in admins:
-            if users.status == "creator":
+            if users.status == "administrators":
                 creatorusername = users.user.username
                 creatorid = users.user.id
         if creatorid != message.from_user.id:
