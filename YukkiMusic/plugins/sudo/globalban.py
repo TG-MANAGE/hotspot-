@@ -77,8 +77,8 @@ async def gbanuser(client, message: Message, _):
     await message.reply_text(
         _["gban_6"].format(mention, number_of_chats)
     )
-    await send_message(GBAN_CHANNEL,_["gban_log"].format(sudo_first_name, sudo_admin, mention, reason))
-    await send_message(GBAN_CHANNEL,_["gban_warning"].format(mention))
+    await app.send_message(GBAN_CHANNEL,_["gban_log"].format(sudo_first_name, sudo_admin, mention, reason))
+    await app.send_message(GBAN_CHANNEL,_["gban_warning"].format(mention))
     await mystic.delete()
 
 
