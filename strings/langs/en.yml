@@ -469,6 +469,8 @@ gban_8 : "**ᴜɴɢʙᴀɴɴɪɴɢ {0}**\n\nᴇxᴩᴇᴄᴛᴇᴅ ᴛɪᴍᴇ :
 gban_9 : "**ᴜɴɢʙᴀɴɴᴇᴅ sᴜᴄᴄᴇssғᴜʟʟʏ**\n\nᴜɴʙᴀɴɴᴇᴅ **{0}** ɪɴ **{1}** ᴄʜᴀᴛs."
 gban_10 : "ɴᴏ ᴏɴᴇ ɪs ɢʙᴀɴɴᴇᴅ."
 gban_11 : "ɢᴇᴛᴛɪɴɢ ɢʙᴀɴɴᴇᴅ ᴜsᴇʀs ʟɪsᴛ..."
+gban_log : "**New Global Ban**\n─────────────────•\n\nGbanned By : {0} ({1})\n\nUser : {2}\n\nReason : {3}"
+gban_warning : "{0} is gbanned!\nA Message From The Owner OF Bot:\nThe Bot & Bot Owner IS Not in Any War Or Fed War, If A Sudo User Gave You Gban, Then Only Sudo User Will Be Resp. For Giving Gban.\nNote: Please Give The Reason Of Gbanning Someone, You Can Put Link Or Telegraph Link As A Proof For Permanent Gbanned!"
 
 #Suggestions
 sug_0 : "❓**Do You Know?**\n\n✅ "
