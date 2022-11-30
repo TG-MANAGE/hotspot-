@@ -31,7 +31,7 @@ GBAN_CHANNEL = GBAN_LOG_ID
 @language
 async def gbanuser(client, message: Message, _):
     if not message.reply_to_message:
-        if len(message.command) != 2:
+        if len(message.command) != 5:
             return await message.reply_text(_["general_1"])
         text_cutting = message.text.split(" ")
         user = text_cutting[1]
