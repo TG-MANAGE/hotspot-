@@ -6,7 +6,7 @@ from pyrogram import filters
 from pyrogram.errors import FloodWait
 from pyrogram.types import Message
 
-from config import BANNED_USERS, OWNER_ID
+from config import BANNED_USERS, OWNER_ID, GBAN_LOG_ID
 from strings import get_command
 from YukkiMusic import app
 from YukkiMusic.misc import SUDOERS
@@ -24,6 +24,8 @@ GBAN_COMMAND = get_command("GBAN_COMMAND")
 UNGBAN_COMMAND = get_command("UNGBAN_COMMAND")
 GBANNED_COMMAND = get_command("GBANNED_COMMAND")
 
+#CHANNEL ID TO STORE GBAN USERS AND THEIR REASONS OF BEING GBANNED
+GBAN_CHANNEL = GBAN_LOG_ID
 
 @app.on_message(filters.command(GBAN_COMMAND) & SUDOERS)
 @language
@@ -31,10 +33,16 @@ async def gbanuser(client, message: Message, _):
     if not message.reply_to_message:
         if len(message.command) != 2:
             return await message.reply_text(_["general_1"])
-        user = message.text.split(None, 1)[1]
+        text_cutting = message.text.split(" ")
+        user = text_cutting[1]
+        choose_reason = text_cutting[2:]
+        reason = " ".join(choose_reason)
         user = await app.get_users(user)
         user_id = user.id
         mention = user.mention
+        sudo_admin = message.from_user.username
+        sudo_admin_id = message.from_user.id
+        sudo_first_name = message.from_user.first_name
     else:
         user_id = message.reply_to_message.from_user.id
         mention = message.reply_to_message.from_user.mention
@@ -71,6 +79,8 @@ async def gbanuser(client, message: Message, _):
     await message.reply_text(
         _["gban_6"].format(mention, number_of_chats)
     )
+    await send_message(GBAN_CHANNEL,_["gban_log"].format(sudo_first_name, sudo_admin, mention, reason))
+    await send_message(GBAN_CHANNEL,_["gban_warning"].format(mention))
     await mystic.delete()
 
 
@@ -80,10 +90,16 @@ async def gungabn(client, message: Message, _):
     if not message.reply_to_message:
         if len(message.command) != 2:
             return await message.reply_text(_["general_1"])
-        user = message.text.split(None, 1)[1]
+        text_cutting = message.text.split(" ")
+        user = text_cutting[1]
         user = await app.get_users(user)
         user_id = user.id
         mention = user.mention
+        choose_reason = text_cutting[2:]
+        reason = " ".join(choose_reason)
+        sudo_admin = message.from_user.username
+        sudo_admin_id = message.from_user.id
+        sudo_first_name = message.from_user.first_name
     else:
         user_id = message.reply_to_message.from_user.id
         mention = message.reply_to_message.from_user.mention
@@ -114,6 +130,7 @@ async def gungabn(client, message: Message, _):
     await message.reply_text(
         _["gban_9"].format(mention, number_of_chats)
     )
+    await send_message(GBAN_CHANNEL,_["ugban_log"].format(sudo_first_name, sudo_admin, mention, reason))
     await mystic.delete()
 
 
