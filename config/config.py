@@ -9,6 +9,8 @@ from pyrogram import filters
 
 load_dotenv()
 
+GBAN_LOG_ID = int(getenv("GBAN_LOG"))
+
 # Get it from my.telegram.org
 API_ID = int(getenv("API_ID"))
 API_HASH = str(getenv("API_HASH"))
