@@ -26,6 +26,7 @@ set_key('.env','AUTO_LEAVE_ASSISTANT_TIME', input("AUTO_LEAVE_ASSISTANT_TIME : "
 set_key('.env','AUTO_LEAVING_ASSISTANT', input("AUTO LEAVE ASSISTANT (True/None) : "))
 set_key('.env','SPOTIFY_CLIENT_ID', input("SPOTIFY CLIENT ID : "))
 set_key('.env','SPOTIFY_CLIENT_SECRET ', input("SPOTIFY CLIENT SECRET  : "))
+set_key('.env','GBAN_LOG ', input("GBAN LOG CHANNEL ID  : "))
 print("All Basic Vars Has Been Set To Bot. Now You Can Skip Upcoming Vars Or Give URL To Download Thumbnails From Web.")
 print("......................")
 print("......................")
