@@ -79,8 +79,8 @@ async def gbanuser(client, message: Message, _):
     await message.reply_text(
         _["gban_6"].format(mention, number_of_chats)
     )
-    await send_message(GBAN_CHANNEL,_["gban_log"].format(sudo_first_name, sudo_admin, mention, reason))
-    await send_message(GBAN_CHANNEL,_["gban_warning"].format(mention))
+    await app.send_message(GBAN_CHANNEL,_["gban_log"].format(sudo_first_name, sudo_admin, mention, reason))
+    await app.send_message(GBAN_CHANNEL,_["gban_warning"].format(mention))
     await mystic.delete()
 
 
@@ -99,7 +99,7 @@ async def gungabn(client, message: Message, _):
         sudo_admin_id = message.from_user.id
         sudo_first_name = message.from_user.first_name
         if len(text_cutting)<=2:
-            return await message.reply_text(_["ugban_log"])
+            return await message.reply_text(_["ungban_reason"])
     else:
         user_id = message.reply_to_message.from_user.id
         mention = message.reply_to_message.from_user.mention
@@ -130,7 +130,7 @@ async def gungabn(client, message: Message, _):
     await message.reply_text(
         _["gban_9"].format(mention, number_of_chats)
     )
-    await send_message(GBAN_CHANNEL,_["ugban_log"].format(sudo_first_name, sudo_admin, mention, reason))
+    await app.send_message(GBAN_CHANNEL,_["ugban_log"].format(sudo_first_name, sudo_admin, mention, reason))
     await mystic.delete()
 
 
