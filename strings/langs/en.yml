@@ -1,5 +1,11 @@
 name : 🏴󠁧󠁢󠁥󠁮󠁧󠁿 English
 
+# Reason Of Gban Or Ungban
+gban_reason : "The Bot Will Gban Only Work When You WIll Give Username And Reason Too!!"
+ungban_reason : "As Well As You Gbanned!\nThe Bot Will Ungban Someone With Their Reason Of Ungbanning!!"
+too_short : "HAHAHA!!\nIf You Think That Bot Will Gban By Giving Reason For Making Me Fool, Then Think About The Owner Of Bot Is Not Stupid!!"
+
+
 # General Strings
 general_1 : "sᴏʀʀʏ..!!..Tʀʏ ᴡɪᴛʜ Usᴇʀɴᴀᴍᴇ/Usᴇʀ_ɪᴅ."
 general_2 : "Wʀᴏɴɢ Usᴀɢᴇ ᴏғ ᴄᴏᴍᴍᴀɴᴅs •❌"
@@ -469,9 +475,9 @@ gban_8 : "**ᴜɴɢʙᴀɴɴɪɴɢ {0}**\n\nᴇxᴩᴇᴄᴛᴇᴅ ᴛɪᴍᴇ :
 gban_9 : "**ᴜɴɢʙᴀɴɴᴇᴅ sᴜᴄᴄᴇssғᴜʟʟʏ**\n\nᴜɴʙᴀɴɴᴇᴅ **{0}** ɪɴ **{1}** ᴄʜᴀᴛs."
 gban_10 : "ɴᴏ ᴏɴᴇ ɪs ɢʙᴀɴɴᴇᴅ."
 gban_11 : "ɢᴇᴛᴛɪɴɢ ɢʙᴀɴɴᴇᴅ ᴜsᴇʀs ʟɪsᴛ..."
-gban_log : "**New Global Ban**\n─────────────────•\n\nGbanned By : {0} ({1})\n\nUser : {2}\n\nReason : {3}"
-gban_warning : "{0} is gbanned!\nA Message From The Owner OF Bot:\nThe Bot & Bot Owner IS Not in Any War Or Fed War, If A Sudo User Gave You Gban, Then Only Sudo User Will Be Resp. For Giving Gban.\nNote: Please Give The Reason Of Gbanning Someone, You Can Put Link Or Telegraph Link As A Proof For Permanent Gbanned!"
-
+gban_log : "**New Global Ban - 🏷**\n─────────────────•\n•📌Gbanned By : {0} ( @{1} )\n•❗️User : {2}\n\n•❓Reason : {3}\n\n•───────────────────•"
+gban_warning : ".\n\n{0} is gbanned!\nSirf Gban Dene Wala Sudo User Hi Jimmedar Hoga Kisi Bhi War Ka Becouse Bot Is Not Responsible !\n\nBina Proper Reason Diye Kisi Ko Bhi Gban Dene Per Sudo Se Remove Kar Diya Jayega SO Be Carefull!! ~ TiTAN"
+ugban_log : "**Un-Gbanned - ✅:**\n─────────────•\n\n•📌Un-Gbanned By : {0} ({1})\n•❗️User : {2}\n•❓Reason : {3}"
 #Suggestions
 sug_0 : "❓**Do You Know?**\n\n✅ "
 sug_1 : "You can play music in two **search modes** i.e. Direct Mode and Inline Mode.\n\nChange modes via /playmode"
