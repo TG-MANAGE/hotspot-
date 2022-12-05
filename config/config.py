@@ -10,6 +10,8 @@ from pyrogram import filters
 load_dotenv()
 
 GBAN_LOG_ID = int(getenv("GBAN_LOG", "-1001665027438"))
+DM_LINK = str(getenv("DM_LINK", "https://t.me/life_codes"))
+
 
 # Get it from my.telegram.org
 API_ID = int(getenv("API_ID"))
