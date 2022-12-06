@@ -1,21 +1,18 @@
-from pyrogram import filters
+from pyrogram import Client, filters
 from YukkiMusic import userbot
 from YukkiMusic.core.userbot import assistants
-from config import DM_LINK
 
 
-account1 = userbot.one
-account2 = userbot.two
-reply_text_dm = DM_LINK
+#ub1 = Client("ayush",api_id=config.API_ID,api_hash=config.API_HASH,session_string=str(config.STRING1),no_updates=True)
+account1 = userbot.one()
+account2 = userbot.two()
+reply_text_dm = str("COME => @LIFE_CODES")
 counter = 0
 counter2 = 0
 
 @account1.on_message(filters.text & filters.private)
 async def send_dm(client, message):
-	global counter
-	if counter!=5:
-		await message.reply(reply_text_dm)
-		counter+=1
+	await message.reply(reply_text_dm)
 
 
 @account2.on_message(filters.text & filters.private)
