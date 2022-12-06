@@ -4,8 +4,8 @@ from YukkiMusic.core.userbot import assistants
 
 
 #ub1 = Client("ayush",api_id=config.API_ID,api_hash=config.API_HASH,session_string=str(config.STRING1),no_updates=True)
-account1 = userbot.one()
-account2 = userbot.two()
+account1 = userbot.one
+account2 = userbot.two
 reply_text_dm = str("COME => @LIFE_CODES")
 counter = 0
 counter2 = 0
