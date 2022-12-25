@@ -74,7 +74,7 @@ async def gen_thumb(videoid):
         logo = youtube.crop((x1, y1, x2, y2))
         logo.thumbnail((520, 520), Image.ANTIALIAS)
         background.paste(logo, (50, 100))
-        neonborder = Image.open('assets/ashayu.png')
+        neonborder = Image.open('assets/ashayu.png').convert("RGBA")
         background.paste(neonborder,(0, 0))
         draw = ImageDraw.Draw(background)
         font = ImageFont.truetype("assets/font2.ttf", 40)
