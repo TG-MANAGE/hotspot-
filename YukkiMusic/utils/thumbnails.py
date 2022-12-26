@@ -70,8 +70,7 @@ async def gen_thumb(videoid):
         x2 = Xcenter + 250
         y2 = Ycenter + 250
         logo = youtube.crop((x1, y1, x2, y2))
-        logo.thumbnail((520, 520), Image.ANTIALIAS)
-        logo = ImageOps.expand(logo, border=2, fill="black")
+        logo.thumbnail((518, 518), Image.ANTIALIAS)
         forhead = Image.open(f"assets/border.png")
         ayushh = forhead.convert('RGBA')
         finalborder = changeImageSize(520, 520, ayushh)
