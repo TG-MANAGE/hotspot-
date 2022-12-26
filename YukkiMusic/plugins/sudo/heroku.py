@@ -17,6 +17,7 @@ from pyrogram import filters
 
 import config
 from strings import get_command
+from config import OWNER_ID
 from YukkiMusic import app
 from YukkiMusic.misc import HAPP, SUDOERS, XCB
 from YukkiMusic.utils.database import (get_active_chats,
