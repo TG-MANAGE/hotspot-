@@ -97,7 +97,8 @@ async def userdel(client, message: Message, _):
         return
     await message.reply_text(f"Something wrong happened.")
 
-@app.on_message(filters.command(SUDOUSERS_COMMAND) & SUDOERS)
+
+@app.on_message(filters.command(SUDOUSERS_COMMAND) & ~BANNED_USERS)
 @language
 async def sudoers_list(client, message: Message, _):
     text = _["sudo_5"]
